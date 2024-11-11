@@ -35,7 +35,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  * @swagger
  * components:
  *   schemas:
- *     User:
+ *     Users:
  *       type: object
  *       required:
  *         - name
@@ -69,7 +69,7 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/User'
+ *                 $ref: '#/components/schemas/Users'
  */
 app.get("/users", cors(), (req, res) => {
   res.json(users);
@@ -93,7 +93,7 @@ app.get("/users", cors(), (req, res) => {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Users'
  *       404:
  *         description: A felhasználó nem található
  */
@@ -118,14 +118,14 @@ app.get("/users/:id", cors(), (req, res) => {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *             $ref: '#/components/schemas/Users'
  *     responses:
  *       201:
  *         description: A felhasználót sikeresen létrehoztam
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Users'
  */
 app.post("/users", cors(), (req, res) => {
   try {
@@ -155,14 +155,14 @@ app.post("/users", cors(), (req, res) => {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *             $ref: '#/components/schemas/Users'
  *     responses:
  *       200:
  *         description: A felhasználót frissítettem
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Users'
  *       404:
  *         description: A felhasználó nem található
  */
